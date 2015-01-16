@@ -45,7 +45,7 @@ None as of 2014-01-16.
 Author
 ------
 
-J.TURNER
+J. TURNER
 
 License
 -------
