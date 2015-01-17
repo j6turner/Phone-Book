@@ -4,5 +4,10 @@ h1 {
 }
 
 h2 {
-  font-family: Georgia, Helvetica;
+  font-family: Times, Helvetica;
+}
+
+h3 {
+  font-family: Times, Helvetica;
+  color: #766C66;
 }
