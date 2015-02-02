@@ -1,0 +1,51 @@
+<h1><center>Phone Book</center></h1>
+<hr />
+
+<div class="left">
+
+<h3>Add phone numbers for <%= @contact.name() %>:</h3>
+
+<form action="/phonebook" method="post">
+
+    <input id="id" name="id" type="hidden" value="<%= contact.id() %>">
+    <br />
+    <br />
+
+    <label for="cell"><ul>Cell Number:  </ul></label>
+    <input id="cell" name="cell" type="text" placeholder="000.000.0000">
+    <br />
+    <br />
+
+    <label for="home"><ul>Home Number:  </ul></label>
+    <input id="home" name="home" type="text" placeholder="555.555.5555">
+    <br />
+    <br />
+
+    <label for="work"><ul>Work Number:  </ul></label>
+    <input id="work" name="work" type="text" placeholder="999.999.9999">
+    <br />
+    <br />
+
+    <button class="btn btn-success">Add</button>
+    <br />
+    <br />
+
+</form>
+
+</div>
+
+
+
+<div class="right">
+
+  <h3>Directory:</h3>
+
+  <ul>
+    <% @contacts.each() do |id| %>
+      <li><a href ="/phonebook/<%= contact.id() %>">Name: <%= contact.name() %><a></li>
+    <% end %>
+  </ul>
+
+</div>
+
+<a href="/"><button type="submit" class="btn btn-warning">Add to the Directory</button></a>
