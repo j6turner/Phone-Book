@@ -1,36 +1,39 @@
-<h1>Phone Book</h1>
+<h1><center>Phone Book</center></h1>
 <hr />
-<h3>Add a contact:</h3>
-<br />
 
-<form action="/phonebook" method="post">
+<div class="left">
 
-  <label for='name'><ul>Name:  </ul></label>
-  <input id='name' name='name' type='text'>
-  <br />
+  <h3>Add a contact:</h3>
   <br />
 
-  <label for='cell'><ul>Cell Number:  </ul></label>
-  <input id='cell' name='cell' type='text'>
-  <br />
+  <form action="/contacts" method="post">
+
+    <label for="name">Name:</label>
+    <input id="name" name="name" type="text" placeholder="Alice Adams">
+    <br />
+    <br />
+
+    <button class="btn btn-success">&#9734; ~ Add</button>
+
+  </form>
+  <br/>
+
+  <form action="/clear" method="post">
+    <button type="submit" class="btn btn-danger">X ~ Clear</button>
+  </form>
   <br />
 
-  <label for='home'><ul>Home Number:  </ul></label>
-  <input id='home' name='home' type='text'>
-  <br />
-  <br />
+</div>
 
-  <label for='work'><ul>Work Number:  </ul></label>
-  <input id='work' name='work' type='text'>
-  <br />
-  <br />
+<div class="right">
 
-  <button class="btn btn-success">Add</button>
-
-</form>
-<br />
-<br/>
-
-<form action="/clear" method="post">
-  <button type="submit" class="btn btn-danger">Clear</button>
-</form>
+    <% if @contacts.any?() %>
+    <ul>
+    <% @contacts.each() do |contact| %>
+      <li><a href="/contacts/<%= contact.id() %>"><%= contact.name() %></a></li>
+    <% end %>
+  </ul>
+    <% else %>
+    <strong><%= "There are no contacts." %></strong>
+    <% end %>
+</div>

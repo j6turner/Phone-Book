@@ -11,3 +11,22 @@ h3 {
   font-family: Times, Helvetica;
   color: #766C66;
 }
+
+li {
+  font-family: Courier, Times, Helvetica;
+}
+
+strong {
+  fong-family: Verdana, Helvetica;
+  color: #CC0000;
+}
+
+.left {
+  float: left;
+  border: 3px solid #766C66;
+  padding: 10px 15px 15px 20px;
+  background-color: #FFFFEF;
+}
+.right {
+  float: right;
+}

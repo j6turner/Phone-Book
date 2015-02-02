@@ -1,4 +1,17 @@
-<h2>The list of contacts has been updated.</h2>
-<hr />
-<h3>Add a contact:</h3>
-<p><a href="/" ><button class="btn btn-success">Add</button></a></p>
+<h3>Directory</h3>
+
+<hr noshade>
+
+<% if @contacts.any?() %>
+<ul>
+  <% @contacts.each() do |id| %>
+  <li><a href ="/phonebook/<%= @contacts.id() %>">Name: <%= name %>  Cell: <%= cell %>  Home: <%= home %>  Work: <%= work %><a></li>
+  <% end %>
+</ul>
+
+
+<% else %>
+<h6>The directory is empty.</h6>
+<% end %>
+<br >
+<p><a href="/" ><button class="btn btn-warning"><h3>Add a new contact</h3></button></a></p>
