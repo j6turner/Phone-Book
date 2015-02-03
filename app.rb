@@ -20,21 +20,20 @@ post('/clear') do
   redirect("/")
 end
 
+post('/phonebook/:id') do
+  type = params.fetch("type")
+  number = params.fetch("number")
+  @phone = Phone.new({ :type => type, :number => number })
+  @contact_new = Contact.find(params.fetch("id").to_i())
+  @contact.add_number(@phone)
+  redirect("/contacts/#{contact_new}")
+end
+
 get('/contacts/:id') do
   @contact = Contact.find(params.fetch("id").to_i())
   @contacts = Contact.all()
   Phone.all(@contact).phone_numbers()
   erb(:contact)
-end
-
-post('/phonebook/:id') do
-  cell = params.fetch("cell")
-  home = params.fetch("home")
-  work = params.fetch("work")
-  @phone = Phone.new({ :cell => cell, :home => home, :work => work })
-  @contact_new = Contact.find(params.fetch("id").to_i())
-  @contact.add_number(@phone)
-  redirect("/contacts/#{contact_new}")
 end
 
 get('/phonebook/:name') do

@@ -1,13 +1,14 @@
 require('rspec')
+require('contact')
 require('phone')
 
 describe("Phone") do
 
-  describe('#cell') do
-    it("returns cell number from list") do
-      test_phone = Phone.new({ :cell => "1112223333", :home => "2223334444", :work => "3334445555" })
+  describe('#type') do
+    it("returns number type") do
+      test_phone = Phone.new({ :type => "cell" })
       test_phone.save()
-      expect(test_phone.cell()).to(eq("1112223333"))
+      expect(test_phone.type()).to(eq("cell"))
     end
   end
 
