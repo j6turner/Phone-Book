@@ -2,7 +2,7 @@ class Phone
 
   @@numbers = []
 
-  attr_reader(:type, :number)
+  attr_reader(:type, :number, :id)
 
   define_method(:initialize) do |type, number|
     @type = type
@@ -18,30 +18,18 @@ class Phone
     @@numbers.push(self)
   end
 
-  define_method(:clear) do
+  define_singleton_method(:clear) do
     @@numbers = []
   end
 
-  define_method(:type) do
-    @type
-  end
-
-  define_method(:number) do
-    @number
-  end
-
-  define_method(:id) do
-    @id
-  end
-
   define_singleton_method(:find) do |id|
-    found_number = nil
+    found_phone = nil
     @@numbers.each do |number|
       if number.id() == id.to_i()
-        found_number = number
+        found_phone = number
       end
     end
-    found_number
+    found_phone
   end
 
 end

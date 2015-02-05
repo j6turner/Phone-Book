@@ -1,30 +1,52 @@
 require('rspec')
-require('contact')
 require('phone')
+require('contact')
+require('pry')
 
 describe("Phone") do
 
-  describe('#type') do
-    it("returns number type") do
-      test_phone = Phone.new({ :type => "cell" })
-      test_phone.save()
-      expect(test_phone.type()).to(eq("cell"))
+  before do
+    Phone.clear()
+  end
+
+  describe(".all") do
+    it("is initially empty") do
+      expect(Phone.all()).to(eq([]))
     end
   end
 
-  describe('#home') do
-    it("returns home number from list") do
-      test_phone = Phone.new({ :cell => "1112223333", :home => "2223334444", :work => "3334445555" })
+  describe("#save") do
+    it("saves entry") do
+      test_phone = Phone.new("cell", "1112223333")
       test_phone.save()
-      expect(test_phone.home()).to(eq("2223334444"))
+      expect(Phone.all()).to(eq([test_phone]))
     end
   end
 
-  describe('#work') do
-    it("returns work number from list") do
-      test_phone = Phone.new({ :cell => "1112223333", :home => "2223334444", :work => "3334445555" })
+  describe(".clear") do
+    it("clears all entries") do
+      test_phone = Phone.new("cell", "1112223333")
       test_phone.save()
-      expect(test_phone.work()).to(eq("3334445555"))
+      Phone.clear()
+      expect(Phone.all()).to(eq([]))
+    end
+  end
+
+  describe('#id') do
+    it('returns phone id') do
+      test_phone = Phone.new("cell", "1112223333")
+      test_phone.save()
+      expect(test_phone.id()).to(eq(1))
+    end
+  end
+
+  describe('.find') do
+    it("locates phone by id") do
+      test_phone = Phone.new("cell", "1112223333")
+      test_phone.save()
+      test_phone2 = Phone.new("home", "2223334444")
+      test_phone2.save()
+      expect(Phone.find(test_phone2.id())).to(eq(test_phone2))
     end
   end
 

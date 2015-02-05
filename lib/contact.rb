@@ -2,7 +2,7 @@ class Contact
 
   @@contacts = []
 
-  attr_reader(:name)
+  attr_reader(:name, :phone_numbers, :id)
 
   define_method(:initialize) do |name|
     @name = name
@@ -30,18 +30,6 @@ class Contact
       end
     end
     found_contact
-  end
-
-  define_method(:name) do
-    @name
-  end
-
-  define_method(:phone_numbers) do
-    @phone_numbers
-  end
-
-  define_method(:id) do
-    @id
   end
 
   define_method(:add_number) do |number|
