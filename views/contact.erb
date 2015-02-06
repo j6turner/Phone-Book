@@ -33,11 +33,15 @@
 
 <div class="right">
 
-
       <ul>
-        <%= @contact.name() %>
+        <h3><%= @contact.name() %></h3>
+        <% @contact.phone_numbers().each() do |phone| %>
+        <li><%= phone.type() %>: <%= phone.number() %></li>
+        <% end %>
       </ul>
 
 <br >
+
   <a href="/"><button type="submit" class="btn btn-warning">Return to the Directory</button></a>
+
 </div>

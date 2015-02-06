@@ -29,8 +29,8 @@ end
 post('/number') do
   type = params.fetch("type")
   number = params.fetch("number")
-  @phone = Phone.new("type", "number")
-  @phone.save()
+  phone = Phone.new(type, number)
+  phone.save()
   @contact = Contact.find(params.fetch("id").to_i())
   @contacts = Contact.all()
   @contact.add_number(phone)
