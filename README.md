@@ -1,3 +1,4 @@
+***
 Phone Book
 ======================
 
@@ -5,8 +6,8 @@ Phone Book
 
 ***
 
-Installation
-------------
+
+###Installation
 
 To run the primary application and/or any of the included RSpec files
 for testing, run either the included Gemfile or manually install
@@ -27,8 +28,7 @@ bundle
 
 Ruby v.2.2.0 was used to create this application.
 
-Usage
------
+###Usage
 
 Upon completion of the above steps in the Installation section,
 type the following address into a web browser:
@@ -39,17 +39,14 @@ localhost:4567/
 
 Enter a name. Enter one or more phone numbers. Observe the results.
 
-Known Bugs
-----------
+###Known Bugs
 
 None as of 2015-01-16.
 
-Author
-------
+###Author
 
 J. TURNER
 
-License
--------
+###License
 
 MIT license
