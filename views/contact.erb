@@ -21,7 +21,7 @@
     <br />
     <br />
 
-    <button class="btn btn-success">Add</button>
+    <button class="btn btn-success">&#9734; ~ Add</button>
     <br />
     <br />
 
@@ -34,7 +34,7 @@
 <div class="right">
 
       <ul>
-        <h3><%= @contact.name() %></h3>
+        <h3>&#x260f; <%= @contact.name() %></h3>
         <% @contact.phone_numbers().each() do |phone| %>
         <li><%= phone.type() %>: <%= phone.number() %></li>
         <% end %>
@@ -42,6 +42,6 @@
 
 <br >
 
-  <a href="/"><button type="submit" class="btn btn-warning">Return to the Directory</button></a>
+  <a href="/"><button type="submit" class="btn btn-warning">&#x293a; ~ Return to the Directory</button></a>
 
 </div>
