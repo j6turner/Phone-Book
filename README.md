@@ -10,7 +10,7 @@ Phone Book
 ###Installation
 
 To run the primary application and/or any of the included RSpec files
-for testing, run either the included Gemfile or manually install
+for testing, either run the included Gemfile or manually install
 the following gems:
 
 ```ruby
