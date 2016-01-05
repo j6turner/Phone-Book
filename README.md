@@ -31,7 +31,7 @@ Ruby v.2.2.0 was used to create this application.
 ###Usage
 
 Upon completion of the above steps in the Installation section,
-type the following address into a web browser:
+type the following address into a Web browser:
 
 ```url
 localhost:4567/
